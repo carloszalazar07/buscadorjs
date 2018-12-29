@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mi Pagina</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="floating-container">
+		  <div class="floating-button">+</div>
+		  <div class="element-container">
+		    <a href="google.com"> 
+		    	<span class="float-element tooltip-left">
+			  	<i class="fab fa-instagram"></i>
+			</a>
+		    </span>
+		      <span class="float-element">
+			<i class="fab fa-twitter"></i>
+		    </span>
+		      <span class="float-element">
+		      <i class="fab fa-github"></i>
+		    </span>
+		  </div>
+		</div>
+		<div class="row">
+			<h2 class="text-center">Inicia Tu Busqueda</h2>
+		</div>
+	  	<input type="text" name="search" id="search" placeholder="Search...">
+	  	<br>
+	  	<ul id="result">
+	  		
+	  	</ul>
+	<div class="search"></div>
+</div>
+
+<script>
+	$(document).ready(function(){
+	$('#search').keyup(function(){
+		$('#result').html('');
+		var searchField = $('#search').val();
+		var expression = new RegExp(searchField, "i");
+
+		$.getJSON('data.json', function(data){
+			$.each(data, function(key, value){
+				if (value.name.search(expression) != -1 || value.location.search(
+					expression) != -1 ) 
+				{
+					$('#result').append('<li><h2>'+value.name+'</h2> | <span>'+value.location+'<span></li>');
+				}
+			})
+		});
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+[
+	{
+		"name": "Angel Martinez",
+		"location":"Colombia Barranquilla, CB"
+	},
+	{
+		"name": "Maxi Rosales",
+		"location":"Coronel Dugraty, CD"
+	},
+	{
+		"name": "Hugo Soto",
+		"location":"Buenos Aires, BA"
+	},
+	{
+		"name": "Javier Roger",
+		"location":"Villa Angela, VA"
+	},
+	{
+		"name": "Silvia Porro",
+		"location":"Mexico Ciudad, MX"
+	},
+	{
+		"name": "Barack Obama",
+		"location":"Canada, CA"
+	},
+	{
+		"name": "Carlos Zalazar",
+		"location":"Villa Angela, VA"
+	},
+	{
+		"name": "Angelina Pascual",
+		"location":"España Madrid, EM"
+	},
+	{
+		"name": "Brad Pitt",
+		"location":"Estados Unidos, EU"
+	}
+
+]
