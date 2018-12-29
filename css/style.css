@@ -129,9 +129,27 @@ h2{
   margin-left: 20px;
   color:#fff ;
 }
-span{
-  margin-top: -50px;
-  margin-left: 20px;
+.scroll{
+  overflow-y: auto;
+}
+ul{
+  margin-top: 60px;
+  background: #1c1c1d;
+  border-radius: 10px;
+}
+li{
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  box-sizing: border-box;
+}
+h4{
+  font-size: 20px;
+  color:#fff ;
+}
+p{
+  margin-top: 0px;
+  font-size: 15px;
   color:#fff ;
 }
 

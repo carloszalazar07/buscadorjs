@@ -34,9 +34,12 @@
 		</div>
 	  	<input type="text" name="search" id="search" placeholder="Search...">
 	  	<br>
-	  	<ul id="result">
-	  		
-	  	</ul>
+	  	<br>
+	  	<div class="scroll">
+	  		<ul id="result">
+	  			
+	  		</ul>
+	  	</div>
 	<div class="search"></div>
 </div>
 
@@ -52,7 +55,7 @@
 				if (value.name.search(expression) != -1 || value.location.search(
 					expression) != -1 ) 
 				{
-					$('#result').append('<li><h2>'+value.name+'</h2> | <span>'+value.location+'<span></li>');
+					$('#result').append('<li><h4 class="text-center">'+value.name+'</h4><p class="text-center">'+value.location+'<p></li>');
 				}
 			})
 		});
