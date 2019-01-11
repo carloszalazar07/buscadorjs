@@ -10,31 +10,60 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Raleway|Thasadith');
+		.container .search{
+			background: #20ed14;
+		}
+		.container input{
+		    background: #20ed14;
+		    text-shadow: 0 0 10px #20ed14;
+		    box-shadow: 0 0 25px 0 #20ed14, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+		}
+		.row h2{
+			margin-top: -145px;
+			color: #d8d8d8;
+		}
+		h2 p{
+			font-size: 20px;
+			font-family: 'Thasadith', sans-serif;
+			color: #9c9c9c;
+		}
+		.container input{
+			margin-top: -40px;
+		}
+		.container .search{
+			margin-top: -52px;
+		}
+		ul{
+			margin-top: 15px;
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="floating-container">
 		  <div class="floating-button"><i class="fas fa-angle-double-up" style="font-size: 25px;"></i></div>
 		  <div class="element-container">
+		    	<span class="float-element" >
 		    <a href="https://www.instagram.com/carloszalazar07/"> 
-		    	<span class="float-element" style="background: #5500FF; box-shadow: 0 20px 20px -10px rgba(85, 0, 256, 0.5);">
-			  	<i class="fab fa-instagram"></i>
-		    	</span>
+			  	<i class="fab fa-instagram" style="color: white;"></i>
 			</a>
+		    	</span>
+		      	<span class="float-element" >
 		    <a href="https://twitter.com/carloszalazar07">
-		      	<span class="float-element" style="background: #008FFF; box-shadow: 0 20px 20px -10px rgba(0, 153, 255, 0.5);">
-  				<i class="fab fa-twitter"></i>
-  			    </span>
+  				<i class="fab fa-twitter" style="color: white;"></i>
   			</a>
+  			    </span>
+		      	<span class="float-element">
 		    <a href="https://www.youtube.com/c/CarloSzalazar07">
-		      	<span class="float-element" style="background: #0000FF; box-shadow: 0 20px 20px -10px rgba(0, 0, 255, 0.5);">
-		      	<i class="fab fa-youtube"></i>
-  			    </span>
+		      	<i class="fab fa-youtube" style="color: white;"></i>
   			</a>
+  			    </span>
 		  </div>
 		</div>
 		<div class="row">
-			<h2 class="text-center">Inicia Tu Busqueda</h2>
+			<h2 class="text-center">Inicia Tu Busqueda <p>Introduce Nombre de Personas</p></h2>
 		</div>
 	  	<input type="text" name="search" id="search" placeholder="Search...">
 	  	<br>
@@ -47,24 +76,7 @@
 	<div class="search"></div>
 </div>
 
-<script>
-	$(document).ready(function(){
-	$('#search').keyup(function(){
-		$('#result').html('');
-		var searchField = $('#search').val();
-		var expression = new RegExp(searchField, "i");
 
-		$.getJSON('data.json', function(data){
-			$.each(data, function(key, value){
-				if (value.name.search(expression) != -1 || value.location.search(
-					expression) != -1 ) 
-				{
-					$('#result').append('<li><h4 class="text-center">'+value.name+'</h4><p class="text-center">'+value.location+'<p></li>');
-				}
-			})
-		});
-	});
-});
-</script>
+<script src="js/buscador.js"></script>
 </body>
 </html>
